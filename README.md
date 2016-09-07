@@ -127,7 +127,7 @@ detail:详细地址(目前大部分为空)
 
 #contact
 
-由于是首次写lua开源库，请各位大神指点，也请各位同仁反馈bug
+由于是首次写lua开源库，请各位大神指点，也请各位同学反馈bug
 
 E-mail:ishixinke@qq.com
 
