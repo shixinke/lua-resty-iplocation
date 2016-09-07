@@ -87,6 +87,38 @@
 
 参数：ip：要查找的IP地址
 
+返回数据说明：
+
+如果查询成功，则得到一个table数据，其结构如下：
+
+    {
+        country_code = "CN",
+        country_name = "中国",
+        province_code = "BJ",
+        province_name = "北京",
+    	city_name = "北京",
+    	start_ip = 3396075520,
+    	end_ip = 3396141055,
+    	detail = nil
+     }
+
+字段说明：
+
+country_code：国家或地区英文简称编码
+
+country_name：为国家名称(都是中文)
+
+province_coe:省级行政区简称(目前数据中只有中国的省份）
+
+province_name：省级行政区名称(不带行政区行政单位名称)
+
+city_name:城市名称
+
+start_ip:被查询的IP所在范围起始值
+
+end_ip：被查询的IP所在范围终结值
+
+detail:详细地址(目前大部分为空)
 #TODO
 
 目前首次加载数据文件到内存比较慢
