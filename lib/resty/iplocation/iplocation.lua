@@ -72,12 +72,12 @@ function _M.offset(self, start, last)
         local ip_data = {}
         ip_data.start_ip = tonumber(location_data.start_ip)
         ip_data.end_ip = tonumber(location_data.end_ip)
-        ip_data.country_code = tostring(ffi.string(location_data.country_code, tonumber(ffi.C.strlen(location_data.country_code))))
-        ip_data.country_name = tostring(ffi.string(location_data.country_name, tonumber(ffi.C.strlen(location_data.country_name))))
+        ip_data.country_code = tostring(ffi.string(location_data.country_code, tonumber(C.strlen(location_data.country_code))))
+        ip_data.country_name = tostring(ffi.string(location_data.country_name, tonumber(C.strlen(location_data.country_name))))
         ip_data.province_code = tostring(ffi.string(location_data.province_code, ffi.sizeof('char[2]')))
-        ip_data.province_name = tostring(ffi.string(location_data.province_name, tonumber(ffi.C.strlen(location_data.province_name))))
-        ip_data.city_name = tostring(ffi.string(location_data.city_name, tonumber(ffi.C.strlen(location_data.city_name))))
-        ip_data.detail = tostring(ffi.string(location_data.detail, tonumber(ffi.C.strlen(location_data.detail))))
+        ip_data.province_name = tostring(ffi.string(location_data.province_name, tonumber(C.strlen(location_data.province_name))))
+        ip_data.city_name = tostring(ffi.string(location_data.city_name, tonumber(C.strlen(location_data.city_name))))
+        ip_data.detail = tostring(ffi.string(location_data.detail, tonumber(C.strlen(location_data.detail))))
         return ip_data,index
     end
 end
@@ -125,7 +125,7 @@ function _M.search(self, ip)
 end
 
 function _M.loadfile(self)
-    local path = self.path or 'lib/resty/location/ipdata.txt'
+    local path = self.path or 'lib/resty/location/ipdat.txt'
     local fd, err = io.open(path)
     if fd == nil then
         return nil, err
