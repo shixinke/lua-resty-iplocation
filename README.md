@@ -1,8 +1,8 @@
-#lua-resty-iplocation
+# lua-resty-iplocation
 
 根据IP地址定位所在区域的工具函数(只需要一次载入IP地址库文件，将IP地址库数据存入共享内存)
 
-#Overview
+# Overview
 
     lua_package_path '/the/path/to/your/project/lib/?.lua';
 	lua_shared_dict ip_data 100m;
@@ -31,9 +31,9 @@
 	}
 
 
-#Methods
+# Methods
 
-##new
+## new
 
 用法:ok = iplocation:new({path = 'the/path/to/the/data/file', dict = 'shared dict name'})
 
@@ -45,7 +45,7 @@
 
    dict:共享字典的名称(默认为ip_data，注：字典的大小建议为100m，因为文件存到内存中所占内存大约为70多M)
 
-##offset
+## offset
 
 用法:ip_data,index = iplocation:offset(start, last)
 
@@ -59,7 +59,7 @@
 
 注：不建议直接使用(模块内部使用)
 
-##search
+## search
 
 用法:data,err = iplocation:search(ip)
 
@@ -67,19 +67,19 @@
 
 参数：ip为要查找的IP
 
-##loadfile
+## loadfile
 
 用法：data, err = iplocation:loadfile()
 
 功能：加载数据文件并返回数据
 
-##reload
+## reload
 
 用法：ok, err = iplocation:reload()
 
 功能：重新从数据文件中把数据加载到内存中(主要用于数据文件有更新时，同时更新数据到共享字典中)
 
-##location
+## location
 
 用法：tab, err = iplocation:location(ip)
 
@@ -119,13 +119,13 @@ start_ip:被查询的IP所在范围起始值
 end_ip：被查询的IP所在范围终结值
 
 detail:详细地址(目前大部分为空)
-#TODO
+# TODO
 
 目前首次加载数据文件到内存比较慢
 
 查找算法的优化
 
-#contact
+# contact
 
 由于是首次写lua开源库，请各位大神指点，也请各位同学反馈bug
 
